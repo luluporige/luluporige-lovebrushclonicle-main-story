@@ -742,7 +742,7 @@ body {
   <aside class="panel">
     <div class="panel-header">
       <p class="logo">시공 속 그림 여행자</p>
-      <h2 id="editor-panel-title">메인 스토리<br>이미지 제작기</h2>
+      <h2 id="editor-panel-title">메인 스토리<br></h2>
       <div class="editor-switcher" aria-label="편집기 전환">
         <button type="button" class="editor-switch-btn active" data-editor="campus" onclick="switchEditor('campus')">메인 스토리</button>
         <button type="button" class="editor-switch-btn" data-editor="empire" onclick="switchEditor('empire')">제국에서 온 손님</button>
@@ -933,7 +933,7 @@ body {
           <div class="pv-title-row">
             <div>
               <p class="eyebrow">다시 그리는 시간</p>
-              <h1 class="pv-h1" id="pv-title">시공 속 그림 여행자<br>메인 스토리 이미지 제작기</h1>
+              <h1 class="pv-h1" id="pv-title">시공 속 그림 여행자<br>메인 스토리</h1>
               <p class="pv-nickname" id="pv-nickname"></p>
             </div>
             <div class="mini-prog">
@@ -991,11 +991,11 @@ const APP_DATA = {
 
 const EDITORS = {
   campus: {
-    label: '메인 스토리', eyebrow: '다시 그리는 시간', title: '시공 속 그림 여행자', subtitle: '메인 스토리 이미지 제작기',
+    label: '메인 스토리', eyebrow: '다시 그리는 시간', title: '시공 속 그림 여행자', subtitle: '메인 스토리',
     storage: 'stg-campus-editor-v4', checked: 'stg-campus-check-v4', defaultTheme: '양피지', filename: '시공속그림여행자_메인스토리_진행상황.png'
   },
   empire: {
-    label: '제국에서 온 손님', eyebrow: '다시 그리는 시간', title: '제국에서 온 손님', subtitle: '이미지 제작기',
+    label: '제국에서 온 손님', eyebrow: '다시 그리는 시간', title: '제국에서 온 손님', subtitle: '',
     storage: 'stg-empire-editor-v4', checked: 'stg-empire-check-v4', defaultTheme: '심야', filename: '제국에서온손님_진행상황.png'
   }
 };
@@ -1614,8 +1614,8 @@ function resetEditorDefaults(editorKey) {
 function updateEditorChrome() {
   const cfg = EDITORS[currentEditor];
   document.getElementById('editor-panel-title').innerHTML = cfg.label === '메인 스토리'
-    ? '메인 스토리<br>이미지 제작기'
-    : '제국에서 온 손님<br>이미지 제작기';
+    ? '메인 스토리<br>'
+    : '제국에서 온 손님<br>';
   document.getElementById('pv-title').innerHTML = cfg.title + '<br>' + cfg.subtitle;
   document.querySelector('.eyebrow').textContent = cfg.eyebrow;
   document.querySelectorAll('.editor-switch-btn').forEach(btn => btn.classList.toggle('active', btn.dataset.editor === currentEditor));
